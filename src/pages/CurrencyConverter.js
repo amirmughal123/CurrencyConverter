@@ -23,7 +23,7 @@ export default class CurrencyConverter extends Component {
   onSubmit = () => {
     const { from, to, amount } = this.state;
     if (from && to) {
-      convertCurrencyService('USD', 'PKR', amount).then(total => {
+      convertCurrencyService(from, to, amount).then(total => {
         this.setState({ total });
       }).catch(err => {
         console.log('ERROR :::', err);
